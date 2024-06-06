@@ -1,0 +1,3 @@
+[build]
+functions = "myfunctions"
+command = "npm run build"
