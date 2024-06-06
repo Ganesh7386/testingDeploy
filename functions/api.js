@@ -12,6 +12,11 @@ app.use(express.json())
 
 let listOfArticles = []
 
+
+router.get("/" , (req , res)=> {
+    res.send("app is running");
+})
+
 router.get("/:id/" , (req , res)=> {
     const {id} = req.params;
     console.log(id)
@@ -42,7 +47,7 @@ router.post("/scrape/" , async (req , res)=> {
 })
 
 
-app.use("/.netlify/functions/app", router);
+app.use("/.netlify/functions/api", router);
 
 module.exports.handler = serverless(app);
 // const getData = async ()=> {
